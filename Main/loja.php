@@ -40,7 +40,7 @@
             </select>
             <br><br>
 
-            <button type="submit">Enviar</button>
+            <button type="submit">Instalar</button>
 
         </form>
 
