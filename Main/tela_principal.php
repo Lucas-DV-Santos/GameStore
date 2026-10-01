@@ -1,3 +1,19 @@
+<?php 
+
+session_start();
+
+
+if (!isset($_SESSION['usuario'])) {
+    $_SESSION['usuario'] = [
+        'nome' => $_POST['nome'],
+        'data' => $_POST['data'],
+        'email' => $_POST['email'],
+        'senha' => $_POST['senha']
+    ];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,15 +26,20 @@
     <nav>
   <header>
     <h1>Bem-vindo à página principal</h1>
+    <h2>Informações de usuário</h2>
+    <p>Nome: <?= $_SESSION['usuario']['nome'] ?></p>
+    <p>Data de nascimento: <?= $_SESSION['usuario']['data']?></p>
+    <p>E-mail: <?=$_SESSION['usuario']['email']?></p>
   </header>
+
   
-  <ul>
+</nav>
+<main>
+    <ul>
     <li><a href="biblioteca.php">Biblioteca</a></li>
     <li><a href="loja.php">Loja</a></li>
-    <li><a href="#">Adicionar jogos</a></li>
-    <li><a href="#">Sair</a></li>
+    <li><a href="index.php">Sair</a></li>
   </ul>
-</nav>
-
+</main>
 </body>
 </html>
